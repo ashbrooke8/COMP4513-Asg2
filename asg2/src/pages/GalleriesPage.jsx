@@ -12,7 +12,7 @@ const GalleriesPage = (props) => {
       <NavBar />
       <div className="grid grid-cols-5 gap-4 p-6">
         <GalleryList galleries={props.galleries} onSelectGallery={setSelectedGallery}/>
-        <GalleryInfo gallery={selectedGallery}/>
+        <GalleryInfo gallery={selectedGallery} addGallery={props.addGallery}/>
         <PaintingsList span="2" paintings={props.paintings} gallery={selectedGallery}/>
       </div>
     </div>

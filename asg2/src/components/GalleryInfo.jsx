@@ -36,7 +36,7 @@ const GalleryInfo = (props) => {
           </a>
         </p>
       </div>
-      <button className="mt-4 px-4 py-2 bg-indigo-400 text-white rounded hover:bg-indigo-600">
+      <button className="mt-4 px-4 py-2 bg-indigo-400 text-white rounded hover:bg-indigo-600 mb-4" onClick={() => props.addGallery(props.gallery)}>
         Add to Favorites
       </button>
       <Map latitude={props.gallery.latitude} longitude={props.gallery.longitude} zoom="13" />

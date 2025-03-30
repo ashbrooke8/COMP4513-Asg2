@@ -18,6 +18,9 @@ function App() {
   const [galleries, setGalleries] = useState([])
   const [paintings, setPaintings] = useState([])
   const [genres, setGenres] = useState([])
+  const [favGalleries, setFavGalleries] = useState([])
+  const [favArtists, setFavArtists] = useState([])
+  const [favPaintings, setFavPaintings] = useState([])
 
   useEffect(() => {
     const storedArtists = localStorage.getItem("artists");
@@ -83,11 +86,22 @@ function App() {
     }
   }, []);
 
+  const addGallery = (gallery) => {
+    if(!favGalleries.some((fav) => fav.galleryId === gallery.galleryId)) {
+        setFavGalleries([...favGalleries, gallery])
+        // console.log(favGalleries)
+        console.log("save")
+    }
+    else {
+      console.log("already in favs")
+    }
+  }
+
   return (
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/artists" element={<ArtistsPage artists={artists} paintings={paintings}/>} />
-      <Route path="/galleries" element={<GalleriesPage galleries={galleries} paintings={paintings}/>} />
+      <Route path="/galleries" element={<GalleriesPage galleries={galleries} paintings={paintings} addGallery={addGallery}/>} />
       <Route path="/paintings" element={<PaintingsPage paintings={paintings}/>} />
       <Route path="/genres" element={<GenresPage genres={genres} paintings={paintings}/>} />
       {/* <Route path="/favourites" element={<FavouritesPage />} /> */}
