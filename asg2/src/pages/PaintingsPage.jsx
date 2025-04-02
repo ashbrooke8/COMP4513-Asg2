@@ -5,17 +5,12 @@ import PaintingFilters from "../components/PaintingFilters";
 import PaintingsList from "../components/PaintingsList";
 
 const PaintingsPage = (props) => {
-  const isPaintingPage = true;
   return (
     <div className="bg-purple-100 min-h-screen font-mono">
       <NavBar />
       <div className="grid grid-cols-5 p-6 gap-4">
-        <PaintingFilters />
-        <PaintingsList
-          span="4"
-          paintings={props.paintings}
-          painting={isPaintingPage}
-        />
+        <PaintingFilters artists={props.artists} galleries={props.galleries} />
+        <PaintingsList span="4" paintings={props.paintings} />
 
         {/* <p>haha paintings</p> */}
       </div>

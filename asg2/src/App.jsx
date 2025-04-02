@@ -63,8 +63,12 @@ function App() {
 
   const addGallery = (gallery) => {
     if (!favGalleries.some((fav) => fav.galleryId === gallery.galleryId)) {
-      setFavGalleries([...favGalleries, gallery]);
-      // console.log(favGalleries)
+      const updatedGalleries = [...favGalleries, gallery];
+      localStorage.setItem(
+        "favouriteGalleries",
+        JSON.stringify(updatedGalleries)
+      );
+      setFavGalleries(updatedGalleries);
       console.log("save galleries");
     } else {
       console.log("already in favs");
@@ -73,18 +77,25 @@ function App() {
 
   const addArtist = (artist) => {
     if (!favArtists.some((fav) => fav.artistId === artist.artistId)) {
-      setFavArtists([...favArtists, artist]);
-      console.log(favArtists);
-      console.log("save artist");
+      const updatedArtists = [...favArtists, artist];
+      localStorage.setItem("favouriteArtists", JSON.stringify(updatedArtists));
+      setFavArtists(updatedArtists);
+      // console.log(favArtists);
+      // console.log("save artist");
     } else {
       console.log("already in favs");
-      console.log(favArtists);
+      // console.log(favArtists);
     }
   };
 
   const addPainting = (painting) => {
     if (!favPaintings.some((fav) => fav.paintingId === painting.paintingId)) {
-      setFavPaintings([...favPaintings, painting]);
+      const updatedPaintings = [...favPaintings, painting];
+      localStorage.setItem(
+        "favouritePaintings",
+        JSON.stringify(updatedPaintings)
+      );
+      setFavPaintings(updatedPaintings);
       console.log("save painting");
     } else {
       console.log("already in favs");
@@ -116,7 +127,13 @@ function App() {
       />
       <Route
         path="/paintings"
-        element={<PaintingsPage paintings={paintings} />}
+        element={
+          <PaintingsPage
+            paintings={paintings}
+            artists={artists}
+            galleries={galleries}
+          />
+        }
       />
       <Route
         path="/genres"
