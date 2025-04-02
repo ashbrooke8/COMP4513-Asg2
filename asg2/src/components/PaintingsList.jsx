@@ -75,7 +75,7 @@ const PaintingsList = (props) => {
             <img
               src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
               alt={painting.title}
-              className="w-16 h-16 rounded-md"
+              className="w-32 h-32 rounded-md"
             />
             <div>
               <p className="text-lg font-semibold text-gray-800">
