@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import PaintingFilters from "../components/PaintingFilters";
-import PaintingsList from "../components/PaintingsList";
+import PaintingsPageList from "../components/PaintingsPageList";
 
 const PaintingsPage = (props) => {
   return (
@@ -10,7 +10,7 @@ const PaintingsPage = (props) => {
       <NavBar />
       <div className="grid grid-cols-5 p-6 gap-4">
         <PaintingFilters artists={props.artists} galleries={props.galleries} />
-        <PaintingsList span="4" paintings={props.paintings} />
+        <PaintingsPageList span="4" paintings={props.paintings} />
 
         {/* <p>haha paintings</p> */}
       </div>
