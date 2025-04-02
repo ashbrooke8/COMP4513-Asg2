@@ -1,8 +1,16 @@
 import { useState } from "react";
+import PaintingDetails from "./PaintingDetails";
 
 const PaintingsList = (props) => {
   const [sortType, setSortType] = useState("title");
+  const [selectedPainting, setSelectedPainting] = useState(null);
   let filteredPaintings = [...props.paintings];
+
+  const openPaintingDetails = (painting) => {
+    setSelectedPainting(painting);
+    const modal = document.getElementById("details_modal");
+    if (modal) modal.showModal();
+  };
 
   if (props.artist) {
     filteredPaintings = filteredPaintings.filter(
@@ -79,14 +87,16 @@ const PaintingsList = (props) => {
               <p className="text-gray-600">{painting.yearOfWork}</p>
               <button
                 className="px-3 py-1 bg-indigo-400 text-white rounded-md hover:bg-indigo-600 transition"
-                onClick={() => alert("hi")}
+                onClick={() => openPaintingDetails(painting)} 
               >
                 View Details
               </button>
             </div>
+            {/* <PaintingDetails painting={painting}/> */}
           </div>
         ))}
       </div>
+      {selectedPainting && <PaintingDetails painting={selectedPainting} />}
     </div>
   );
 };

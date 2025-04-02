@@ -7,6 +7,9 @@ import PaintingsList from "../components/PaintingsList";
 
 const GenresPage = (props) => {
   const [selectedGenre, setSelectedGenre] = useState(null);
+
+  //call /paintings/genres/:ref as a handler when an item in GenreList is selected
+
   return (
     <div className="bg-purple-100 min-h-screen font-mono">
       <NavBar />
