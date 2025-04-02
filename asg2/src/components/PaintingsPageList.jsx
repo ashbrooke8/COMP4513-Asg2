@@ -2,7 +2,7 @@ import { useState } from "react";
 import PaintingDetails from "./PaintingDetails";
 
 const PaintingsPageList = (props) => {
-  const [sortType, setSortType] = useState("title");
+  const [sortType, setSortType] = useState("year");
   const [selectedPainting, setSelectedPainting] = useState(null);
   let filteredPaintings = [...props.paintings];
 
