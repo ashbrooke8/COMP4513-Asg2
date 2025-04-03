@@ -52,7 +52,8 @@ const PaintingsPageList = (props) => {
             className="flex items-center space-x-8 border-b pb-3"
           >
             <img
-              src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
+              // src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
+              src={"/paintings/full/" + painting.imageFileName + ".jpg"}
               alt={painting.title}
               className="w-32 h-32 rounded-md"
             />
@@ -79,7 +80,12 @@ const PaintingsPageList = (props) => {
           </div>
         ))}
       </div>
-      {selectedPainting && <PaintingDetails painting={selectedPainting} />}
+      {selectedPainting && (
+        <PaintingDetails
+          painting={selectedPainting}
+          addPainting={props.addPainting}
+        />
+      )}
     </div>
   );
 };

@@ -6,7 +6,8 @@ const PaintingDetails = (props) => {
         <div className="flex gap-8">
           <div className="flex-shrink-0 w-[350px]">
             <img
-              src={`http://res.cloudinary.com/funwebdev/image/upload/h_400/art/paintings/${props.painting.imageFileName}.jpg`}
+              // src={`http://res.cloudinary.com/funwebdev/image/upload/h_400/art/paintings/${props.painting.imageFileName}.jpg`}
+              src={"/paintings/full/" + props.painting.imageFileName + ".jpg"}
               alt={props.painting.title}
               className="rounded-md"
             />
@@ -49,7 +50,7 @@ const PaintingDetails = (props) => {
         </div>
         <button
           class="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
-          onClick={() => alert("hi")}
+          onClick={() => props.addPainting(props.painting)}
         >
           Add to Favorites
         </button>

@@ -18,9 +18,31 @@ function App() {
   const [galleries, setGalleries] = useState([]);
   const [paintings, setPaintings] = useState([]);
   const [genres, setGenres] = useState([]);
-  const [favGalleries, setFavGalleries] = useState([]);
-  const [favArtists, setFavArtists] = useState([]);
-  const [favPaintings, setFavPaintings] = useState([]);
+  //when loading, this tries to get the value from the respective favourites in local storage, and if nothing is there, return an empty array
+  const [favGalleries, setFavGalleries] = useState(() => {
+    const storedGalleries = localStorage.getItem("favouriteGalleries");
+    if (storedGalleries) {
+      return JSON.parse(storedGalleries);
+    } else {
+      return [];
+    }
+  });
+  const [favArtists, setFavArtists] = useState(() => {
+    const storedArtists = localStorage.getItem("favouriteArtists");
+    if (storedArtists) {
+      return JSON.parse(storedArtists);
+    } else {
+      return [];
+    }
+  });
+  const [favPaintings, setFavPaintings] = useState(() => {
+    const storedPaintings = localStorage.getItem("favouritePaintings");
+    if (storedPaintings) {
+      return JSON.parse(storedPaintings);
+    } else {
+      return [];
+    }
+  });
 
   const fetchData = (key, url, setter) => {
     const storedData = localStorage.getItem(key);
@@ -112,6 +134,10 @@ function App() {
             artists={artists}
             paintings={paintings}
             addArtist={addArtist}
+            favGalleries={favGalleries}
+            favArtists={favArtists}
+            addPainting={addPainting}
+            favPaintings={favPaintings}
           />
         }
       />
@@ -122,6 +148,10 @@ function App() {
             galleries={galleries}
             paintings={paintings}
             addGallery={addGallery}
+            favGalleries={favGalleries}
+            favArtists={favArtists}
+            addPainting={addPainting}
+            favPaintings={favPaintings}
           />
         }
       />
@@ -132,6 +162,10 @@ function App() {
             paintings={paintings}
             artists={artists}
             galleries={galleries}
+            favGalleries={favGalleries}
+            favArtists={favArtists}
+            addPainting={addPainting}
+            favPaintings={favPaintings}
           />
         }
       />
@@ -142,6 +176,9 @@ function App() {
             genres={genres}
             paintings={paintings}
             addPainting={addPainting}
+            favGalleries={favGalleries}
+            favArtists={favArtists}
+            favPaintings={favPaintings}
           />
         }
       />

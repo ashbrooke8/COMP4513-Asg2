@@ -9,7 +9,11 @@ const ArtistsPage = (props) => {
 
   return (
     <div className="bg-purple-100 min-h-screen font-mono">
-      <NavBar />
+      <NavBar
+        favGalleries={props.favGalleries}
+        favArtists={props.favArtists}
+        favPaintings={props.favPaintings}
+      />
       <div className="grid grid-cols-5 p-6 gap-4">
         <ArtistList
           artists={props.artists}
@@ -20,6 +24,7 @@ const ArtistsPage = (props) => {
           span="2"
           paintings={props.paintings}
           artist={selectedArtist}
+          addPainting={props.addPainting}
         />
       </div>
     </div>

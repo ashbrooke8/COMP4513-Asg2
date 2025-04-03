@@ -7,10 +7,18 @@ import PaintingsPageList from "../components/PaintingsPageList";
 const PaintingsPage = (props) => {
   return (
     <div className="bg-purple-100 min-h-screen font-mono">
-      <NavBar />
+      <NavBar
+        favGalleries={props.favGalleries}
+        favArtists={props.favArtists}
+        favPaintings={props.favPaintings}
+      />
       <div className="grid grid-cols-5 p-6 gap-4">
         <PaintingFilters artists={props.artists} galleries={props.galleries} />
-        <PaintingsPageList span="4" paintings={props.paintings} />
+        <PaintingsPageList
+          span="4"
+          paintings={props.paintings}
+          addPainting={props.addPainting}
+        />
 
         {/* <p>haha paintings</p> */}
       </div>

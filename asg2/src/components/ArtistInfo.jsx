@@ -43,7 +43,13 @@ const ArtistInfo = (props) => {
         >
           Add to Favorites
         </button>
-        <p className="text-gray-700">remember to add image too!!</p>
+        {/* <p className="text-gray-700">remember to add image too!!</p> */}
+        <img
+          // src={`http://res.cloudinary.com/funwebdev/image/upload/h_400/art/paintings/${props.painting.imageFileName}.jpg`}
+          src={"/artists/full/" + props.artist.artistId + ".jpg"}
+          alt={props.artist.artistId}
+          className="rounded-md"
+        />
       </div>
     </div>
   );

@@ -73,7 +73,8 @@ const PaintingsList = (props) => {
             className="flex items-center space-x-8 border-b pb-3"
           >
             <img
-              src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
+              // src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
+              src={"/paintings/square/" + painting.imageFileName + ".jpg"}
               alt={painting.title}
               className="w-32 h-32 rounded-md"
             />
@@ -87,7 +88,7 @@ const PaintingsList = (props) => {
               <p className="text-gray-600">{painting.yearOfWork}</p>
               <button
                 className="px-3 py-1 bg-indigo-400 text-white rounded-md hover:bg-indigo-600 transition"
-                onClick={() => openPaintingDetails(painting)} 
+                onClick={() => openPaintingDetails(painting)}
               >
                 View Details
               </button>
@@ -96,7 +97,12 @@ const PaintingsList = (props) => {
           </div>
         ))}
       </div>
-      {selectedPainting && <PaintingDetails painting={selectedPainting} />}
+      {selectedPainting && (
+        <PaintingDetails
+          painting={selectedPainting}
+          addPainting={props.addPainting}
+        />
+      )}
     </div>
   );
 };
