@@ -68,11 +68,41 @@ const PaintingsList = (props) => {
     return 0;
   });
 
+  let filterValues;
+  if (props.artist) {
+    filterValues = (
+      <select
+        name="sort"
+        id="sort"
+        value={sortType}
+        onChange={(e) => setSortType(e.target.value)}
+        className="border border-gray-300 rounded p-2"
+      >
+        <option value="title">Sort by Title</option>
+        <option value="year">Sort By Year</option>
+      </select>
+    );
+  } else {
+    filterValues = (
+      <select
+        name="sort"
+        id="sort"
+        value={sortType}
+        onChange={(e) => setSortType(e.target.value)}
+        className="border border-gray-300 rounded p-2"
+      >
+        <option value="artist">Sort by Artist</option>
+        <option value="title">Sort by Title</option>
+        <option value="year">Sort By Year</option>
+      </select>
+    );
+  }
+
   return (
     <div className={`bg-white p-5 rounded-lg shadow-lg col-span-${props.span}`}>
       <div className="flex justify-between mb-3 items-center">
         <h2 className="text-lg font-semibold text-indigo-600">Paintings</h2>
-        <select
+        {/* <select
           name="sort"
           id="sort"
           value={sortType}
@@ -82,7 +112,8 @@ const PaintingsList = (props) => {
           <option value="artist">Sort by Artist</option>
           <option value="title">Sort by Title</option>
           <option value="year">Sort By Year</option>
-        </select>
+        </select> */}
+        {filterValues}
       </div>
       <div className="mt-4 space-y-4">
         {filteredPaintings.map((painting) => (
