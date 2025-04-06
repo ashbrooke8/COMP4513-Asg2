@@ -8,10 +8,9 @@ const PaintingsPageList = (props) => {
 
   const openPaintingDetails = (painting) => {
     setSelectedPainting(painting);
-    const modal = document.getElementById("details_modal");
-    if (modal) modal.showModal();
   };
 
+  //sorting logic
   filteredPaintings.sort((a, b) => {
     if (sortType === "artist") {
       return a.artist.lastName.localeCompare(b.artist.lastName);
@@ -80,10 +79,13 @@ const PaintingsPageList = (props) => {
           </div>
         ))}
       </div>
-      {selectedPainting && (
+      {selectedPainting && ( //if there is a selected painting, render PaintingDetails
         <PaintingDetails
           painting={selectedPainting}
           addPainting={props.addPainting}
+          removePainting={props.removePainting}
+          favPaintings={props.favPaintings}
+          onClose={() => setSelectedPainting(null)} //resets selected painting, closing modal
         />
       )}
     </div>

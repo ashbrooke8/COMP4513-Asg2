@@ -18,6 +18,7 @@ function App() {
   const [galleries, setGalleries] = useState([]);
   const [paintings, setPaintings] = useState([]);
   const [genres, setGenres] = useState([]);
+  
   //when loading, this tries to get the value from the respective favourites in local storage, and if nothing is there, return an empty array
   const [favGalleries, setFavGalleries] = useState(() => {
     const storedGalleries = localStorage.getItem("favouriteGalleries");
@@ -92,8 +93,6 @@ function App() {
       );
       setFavGalleries(updatedGalleries);
       console.log("save galleries");
-    } else {
-      console.log("already in favs");
     }
   };
 
@@ -104,9 +103,6 @@ function App() {
       setFavArtists(updatedArtists);
       // console.log(favArtists);
       // console.log("save artist");
-    } else {
-      console.log("already in favs");
-      // console.log(favArtists);
     }
   };
 
@@ -119,10 +115,44 @@ function App() {
       );
       setFavPaintings(updatedPaintings);
       console.log("save painting");
-    } else {
-      console.log("already in favs");
     }
   };
+
+  //update the galleries with the non-selected attribute and set that to local storage and the state
+  const removeGallery = (gallery) => {
+    const updatedGalleries = favGalleries.filter((selectedGallery) => {
+      return selectedGallery.galleryId !== gallery.galleryId;
+    })
+    localStorage.setItem("favouriteGalleries", JSON.stringify(updatedGalleries))
+    setFavGalleries(updatedGalleries)
+  }
+
+  const removeArtist = (artist) => {
+    const updatedArtists = favArtists.filter((selectedArtist) => {
+      return selectedArtist.artistId !== artist.artistId;
+    })
+    localStorage.setItem("favouriteArtists", JSON.stringify(updatedArtists))
+    setFavArtists(updatedArtists)
+  }
+
+  const removePainting = (painting) => {
+    const updatedPaintings = favPaintings.filter((selectedPainting) => {
+      return selectedPainting.paintingId !== painting.paintingId;
+    })
+    localStorage.setItem("favouritePaintings", JSON.stringify(updatedPaintings))
+    setFavPaintings(updatedPaintings)
+  }
+
+  //removes all favourites from every local storage item and resets the state to an empty array
+  const removeAllFavourites = () => {
+    localStorage.removeItem("favouriteArtists");
+    localStorage.removeItem("favouriteGalleries");
+    localStorage.removeItem("favouritePaintings");
+    setFavPaintings([]);
+    setFavArtists([]);
+    setFavGalleries([]);
+    // console.log("check")
+  }
 
   return (
     <Routes>
@@ -134,10 +164,14 @@ function App() {
             artists={artists}
             paintings={paintings}
             addArtist={addArtist}
+            addPainting={addPainting}
             favGalleries={favGalleries}
             favArtists={favArtists}
-            addPainting={addPainting}
             favPaintings={favPaintings}
+            removeArtist={removeArtist}
+            removeGallery={removeGallery}
+            removePainting={removePainting}
+            removeAllFavourites={removeAllFavourites}
           />
         }
       />
@@ -148,10 +182,14 @@ function App() {
             galleries={galleries}
             paintings={paintings}
             addGallery={addGallery}
+            addPainting={addPainting}
             favGalleries={favGalleries}
             favArtists={favArtists}
-            addPainting={addPainting}
             favPaintings={favPaintings}
+            removeGallery={removeGallery}
+            removeArtist={removeArtist}
+            removePainting={removePainting}
+            removeAllFavourites={removeAllFavourites}
           />
         }
       />
@@ -165,6 +203,10 @@ function App() {
             favGalleries={favGalleries}
             favArtists={favArtists}
             addPainting={addPainting}
+            removeGallery={removeGallery}
+            removeArtist={removeArtist}
+            removePainting={removePainting}
+            removeAllFavourites={removeAllFavourites}
             favPaintings={favPaintings}
           />
         }
@@ -176,6 +218,10 @@ function App() {
             genres={genres}
             paintings={paintings}
             addPainting={addPainting}
+            removeGallery={removeGallery}
+            removeArtist={removeArtist}
+            removePainting={removePainting}
+            removeAllFavourites={removeAllFavourites}
             favGalleries={favGalleries}
             favArtists={favArtists}
             favPaintings={favPaintings}

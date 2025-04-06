@@ -2,6 +2,7 @@ const FavouritesModal = (props) => {
   let favGalleryList;
   let favArtistList;
   let favPaintingList;
+  
   //if the favourite element is empty, state that to the user, and if not, create a list with all of the elements
   if (props.favGalleries.length > 0) {
     favGalleryList = (
@@ -9,6 +10,9 @@ const FavouritesModal = (props) => {
         {props.favGalleries.map((gallery) => (
           <li className="text-gray-700" key={gallery.galleryId}>
             {gallery.galleryName}
+            <button className="ml-4 px-3 py-1 rounded text-white transition bg-indigo-400 hover:bg-indigo-600" onClick={() => props.removeGallery(gallery)}>
+              X
+            </button>
           </li>
         ))}
       </ul>
@@ -24,6 +28,9 @@ const FavouritesModal = (props) => {
         {props.favArtists.map((artist) => (
           <li className="text-gray-700" key={artist.artistId}>
             {artist.firstName} {artist.lastName}
+            <button className="ml-4 px-3 py-1 rounded text-white transition bg-indigo-400 hover:bg-indigo-600" onClick={() => props.removeArtist(artist)}>
+              X
+            </button>
           </li>
         ))}
       </ul>
@@ -39,6 +46,9 @@ const FavouritesModal = (props) => {
         {props.favPaintings.map((painting) => (
           <li className="text-gray-700" key={painting.paintingId}>
             {painting.title}
+            <button className="ml-4 px-3 py-1 rounded text-white transition bg-indigo-400 hover:bg-indigo-600" onClick={() => props.removePainting(painting)}>
+              X
+            </button>
           </li>
         ))}
       </ul>
@@ -48,11 +58,14 @@ const FavouritesModal = (props) => {
       <p className="text-gray-700">No favourite paintings saved yet.</p>
     );
   }
+
   return (
     <dialog id="favourites_modal" className="modal">
       <div className="modal-box h-[700px] max-w-[1200px] bg-purple-100">
-        <h3 className="font-bold text-xl text-gray-700">Favourites</h3>
-        {/* <p className="py-4 text-gray-700">insert fav items in future</p> */}
+        <div className="flex gap-6">
+          <h3 className="font-bold text-xl text-gray-700">Favourites</h3>
+        <button className="bg-indigo-400 rounded ml-4 px-3 py-1 transition hover:bg-indigo-600" onClick={props.removeAllFavourites}>Empty Favourites</button>
+        </div>
         <div className="grid grid-cols-3 p-6 gap-6">
           <div className="bg-white p-5 rounded-lg col-span-1 shadow-lg">
             <p className="font-bold text-lg text-gray-700">Galleries</p>

@@ -8,6 +8,20 @@ const ArtistInfo = (props) => {
     );
   }
 
+  //use some method to see if artist is favourited
+  const isFavouriteArtist  = props.favArtists.some((fav) => {
+    return fav.artistId === props.artist.artistId
+})
+
+  const handleFavouritesClick = () => {
+    if(isFavouriteArtist) {
+      props.removeArtist(props.artist);
+      console.log("check")
+    } else {
+      props.addArtist(props.artist);
+    }
+  }
+
   return (
     <div className="bg-white p-5 rounded-lg shadow-lg col-span-2">
       <h2 className="text-lg font-semibold text-indigo-600">Artist Info</h2>
@@ -38,10 +52,11 @@ const ArtistInfo = (props) => {
           </a>
         </p>
         <button
-          class="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
-          onClick={() => props.addArtist(props.artist)}
+          className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
+          onClick={handleFavouritesClick}
         >
-          Add to Favorites
+          {/* Add to Favorites */}
+          {isFavouriteArtist ? "Remove from Favorites" : "Add to Favorites"}
         </button>
         {/* <p className="text-gray-700">remember to add image too!!</p> */}
         <img

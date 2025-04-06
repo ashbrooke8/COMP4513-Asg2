@@ -9,7 +9,7 @@ const GenresPage = (props) => {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [genrePaintings, setGenrePaintings] = useState([]);
 
-  //call /paintings/genres/:ref as a handler when an item in GenreList is selected
+  //call /paintings/genres/:ref as a handler when an item in GenreList is selected and fetch the paintings
   useEffect(() => {
     if (!selectedGenre) return;
     let url = `https://comp4513-asg1.glitch.me/api/paintings/genre/${selectedGenre.genreId}`;
@@ -32,6 +32,10 @@ const GenresPage = (props) => {
         favGalleries={props.favGalleries}
         favArtists={props.favArtists}
         favPaintings={props.favPaintings}
+        removeArtist={props.removeArtist}
+        removeGallery={props.removeGallery}
+        removePainting={props.removePainting}
+        removeAllFavourites={props.removeAllFavourites}
       />
       <div className="grid gap-4 p-6 grid-cols-5">
         <GenreList genres={props.genres} onSelectGenre={setSelectedGenre} />
@@ -43,6 +47,8 @@ const GenresPage = (props) => {
             genre={selectedGenre}
             // isGenre = {true}
             addPainting={props.addPainting}
+            removePainting={props.removePainting}
+            favPaintings={props.favPaintings}
           />
         </div>
       </div>

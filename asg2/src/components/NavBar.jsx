@@ -68,6 +68,10 @@ const NavBar = (props) => {
         favGalleries={props.favGalleries}
         favArtists={props.favArtists}
         favPaintings={props.favPaintings}
+        removeGallery={props.removeGallery}
+        removeArtist={props.removeArtist}
+        removePainting={props.removePainting}
+        removeAllFavourites={props.removeAllFavourites}
       />
     </header>
   );

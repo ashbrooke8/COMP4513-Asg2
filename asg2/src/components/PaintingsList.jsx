@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PaintingDetails from "./PaintingDetails";
 
 const PaintingsList = (props) => {
@@ -6,10 +6,28 @@ const PaintingsList = (props) => {
   const [selectedPainting, setSelectedPainting] = useState(null);
   let filteredPaintings = [...props.paintings];
 
+  //watches the selected painting for a change and when it happens, rerender
+  // useEffect(() => {
+  //   const modal = document.getElementById("details_modal");
+  //   if (modal) {
+  //     modal.showModal();
+  //     const handleClose = () => props.onClose();
+  //     modal.addEventListener("close", handleClose);
+  //   }
+  //   return () => {
+  //     modal.removeEventListener("close", handleClose)
+  //     };
+  //   }, []);
+
+  // useEffect(() => {
+  //   if (selectedPainting) {
+  //     const modal = document.getElementById("details_modal");
+  //     if (modal) modal.showModal();
+  //   }
+  // }, [selectedPainting]);
+
   const openPaintingDetails = (painting) => {
     setSelectedPainting(painting);
-    const modal = document.getElementById("details_modal");
-    if (modal) modal.showModal();
   };
 
   if (props.artist) {
@@ -97,10 +115,14 @@ const PaintingsList = (props) => {
           </div>
         ))}
       </div>
-      {selectedPainting && (
+      {selectedPainting && ( //if there is a selected painting, render PaintingDetails
         <PaintingDetails
           painting={selectedPainting}
           addPainting={props.addPainting}
+          removePainting={props.removePainting}
+          favPaintings={props.favPaintings}
+          paintings={props.paintings}
+          onClose={() => setSelectedPainting(null)} //resets selected painting, closing modal
         />
       )}
     </div>

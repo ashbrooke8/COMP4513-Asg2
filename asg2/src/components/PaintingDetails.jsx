@@ -1,4 +1,35 @@
+import {useEffect} from "react"
+
 const PaintingDetails = (props) => {
+
+  //if the modal exists, show it and add the close event listener,
+  useEffect(() => {
+    const modal = document.getElementById("details_modal");
+    const handleClose = () => props.onClose();
+    if (modal) {
+      modal.showModal();
+      modal.addEventListener("close", handleClose);
+    }
+    return () => { //remove event listener when component unmounts
+      modal.removeEventListener("close", handleClose)
+      };
+    }, []);
+
+  //uses the some method to check if at least one of the paintings is favourited
+  const isFavouritePainting = props.favPaintings.some((fav) => {
+    return fav.paintingId === props.painting.paintingId
+  })
+
+  //if the selected painting is already a favourite, call the remove function, otherwise, call add function
+  const handleFavouritesClick = () => {
+    if(isFavouritePainting) {
+      props.removePainting(props.painting);
+      // console.log("check")
+    } else {
+      props.addPainting(props.painting);
+    }
+  }
+
   return (
     <dialog id="details_modal" className="modal">
       <div className="modal-box h-[700px] max-w-[1200px]">
@@ -50,9 +81,10 @@ const PaintingDetails = (props) => {
         </div>
         <button
           class="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
-          onClick={() => props.addPainting(props.painting)}
+          onClick={handleFavouritesClick}
         >
-          Add to Favorites
+          {/* Add to Favorites */}
+          {isFavouritePainting ? "Remove from Favorites" : "Add to Favorites"}
         </button>
         <div className="modal-action">
           <form method="dialog">
