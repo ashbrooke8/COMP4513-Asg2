@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import GenreList from "../components/GenreList";
 import GenreInfo from "../components/GenreInfo";
-import PaintingsList from "../components/PaintingsList";
+import GenresPageList from "../components/GenresPageList";
 
 const GenresPage = (props) => {
   const [selectedGenre, setSelectedGenre] = useState(null);
@@ -41,11 +41,10 @@ const GenresPage = (props) => {
         <GenreList genres={props.genres} onSelectGenre={setSelectedGenre} />
         <div className="flex flex-col space-y-4 col-span-4">
           <GenreInfo genre={selectedGenre} />
-          <PaintingsList
+          <GenresPageList
             span="4"
             paintings={genrePaintings}
             genre={selectedGenre}
-            // isGenre = {true}
             addPainting={props.addPainting}
             removePainting={props.removePainting}
             favPaintings={props.favPaintings}
