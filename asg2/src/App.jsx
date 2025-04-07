@@ -18,7 +18,7 @@ function App() {
   const [galleries, setGalleries] = useState([]);
   const [paintings, setPaintings] = useState([]);
   const [genres, setGenres] = useState([]);
-  
+
   //when loading, this tries to get the value from the respective favourites in local storage, and if nothing is there, return an empty array
   const [favGalleries, setFavGalleries] = useState(() => {
     const storedGalleries = localStorage.getItem("favouriteGalleries");
@@ -122,26 +122,32 @@ function App() {
   const removeGallery = (gallery) => {
     const updatedGalleries = favGalleries.filter((selectedGallery) => {
       return selectedGallery.galleryId !== gallery.galleryId;
-    })
-    localStorage.setItem("favouriteGalleries", JSON.stringify(updatedGalleries))
-    setFavGalleries(updatedGalleries)
-  }
+    });
+    localStorage.setItem(
+      "favouriteGalleries",
+      JSON.stringify(updatedGalleries)
+    );
+    setFavGalleries(updatedGalleries);
+  };
 
   const removeArtist = (artist) => {
     const updatedArtists = favArtists.filter((selectedArtist) => {
       return selectedArtist.artistId !== artist.artistId;
-    })
-    localStorage.setItem("favouriteArtists", JSON.stringify(updatedArtists))
-    setFavArtists(updatedArtists)
-  }
+    });
+    localStorage.setItem("favouriteArtists", JSON.stringify(updatedArtists));
+    setFavArtists(updatedArtists);
+  };
 
   const removePainting = (painting) => {
     const updatedPaintings = favPaintings.filter((selectedPainting) => {
       return selectedPainting.paintingId !== painting.paintingId;
-    })
-    localStorage.setItem("favouritePaintings", JSON.stringify(updatedPaintings))
-    setFavPaintings(updatedPaintings)
-  }
+    });
+    localStorage.setItem(
+      "favouritePaintings",
+      JSON.stringify(updatedPaintings)
+    );
+    setFavPaintings(updatedPaintings);
+  };
 
   //removes all favourites from every local storage item and resets the state to an empty array
   const removeAllFavourites = () => {
@@ -152,11 +158,12 @@ function App() {
     setFavArtists([]);
     setFavGalleries([]);
     // console.log("check")
-  }
+  };
 
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route
         path="/artists"
         element={

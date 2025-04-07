@@ -10,7 +10,7 @@ const GenresPageList = (props) => {
     setSelectedPainting(painting);
   };
 
-  if (!props.paintings) {
+  if (!props.genre) {
     return (
       <div
         className={`bg-white p-5 rounded-lg shadow-lg col-span-${props.span}`}
@@ -59,7 +59,6 @@ const GenresPageList = (props) => {
             className="flex items-center space-x-8 border-b pb-3"
           >
             <img
-              // src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
               src={"/paintings/square/" + painting.imageFileName + ".jpg"}
               alt={painting.title}
               className="w-32 h-32 rounded-md"
@@ -79,7 +78,6 @@ const GenresPageList = (props) => {
                 View Details
               </button>
             </div>
-            {/* <PaintingDetails painting={painting}/> */}
           </div>
         ))}
       </div>
@@ -89,7 +87,6 @@ const GenresPageList = (props) => {
           addPainting={props.addPainting}
           removePainting={props.removePainting}
           favPaintings={props.favPaintings}
-          //   paintings={props.paintings}
           onClose={() => setSelectedPainting(null)} //resets selected painting, closing modal
         />
       )}

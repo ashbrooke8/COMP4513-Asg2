@@ -26,7 +26,7 @@ const NavBar = (props) => {
 
   return (
     <header className="bg-indigo-500 text-white flex justify-between items-center p-4 shadow-md">
-      <div className="text-xl font-bold">Art Dashboard</div>
+      <div className="text-xl font-bold border-2 p-2 rounded">Art Explorer</div>
       <nav className="space-x-4">
         <Link
           className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
@@ -54,7 +54,6 @@ const NavBar = (props) => {
         </Link>
         <button
           onClick={openFavouritesModal}
-          // className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
           className={favouritesButton}
           disabled={favouritesDisabled}
         >
@@ -62,6 +61,12 @@ const NavBar = (props) => {
         </button>
         <Link className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600">
           About
+        </Link>
+        <Link
+          className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+          to="/login"
+        >
+          Logout
         </Link>
       </nav>
       <FavouritesModal

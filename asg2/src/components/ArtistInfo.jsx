@@ -9,18 +9,18 @@ const ArtistInfo = (props) => {
   }
 
   //use some method to see if artist is favourited
-  const isFavouriteArtist  = props.favArtists.some((fav) => {
-    return fav.artistId === props.artist.artistId
-})
+  const isFavouriteArtist = props.favArtists.some((fav) => {
+    return fav.artistId === props.artist.artistId;
+  });
 
   const handleFavouritesClick = () => {
-    if(isFavouriteArtist) {
+    if (isFavouriteArtist) {
       props.removeArtist(props.artist);
-      console.log("check")
+      console.log("check");
     } else {
       props.addArtist(props.artist);
     }
-  }
+  };
 
   return (
     <div className="bg-white p-5 rounded-lg shadow-lg col-span-2">
@@ -41,7 +41,7 @@ const ArtistInfo = (props) => {
         </p>
         <p className="text-gray-700">{props.artist.details}</p>
         <p className="text-gray-700">
-          <strong>More Info:</strong>
+          <strong>More Info: </strong>
           <a
             href={props.artist.artistLink}
             target="_blank"
@@ -55,12 +55,9 @@ const ArtistInfo = (props) => {
           className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
           onClick={handleFavouritesClick}
         >
-          {/* Add to Favorites */}
           {isFavouriteArtist ? "Remove from Favorites" : "Add to Favorites"}
         </button>
-        {/* <p className="text-gray-700">remember to add image too!!</p> */}
         <img
-          // src={`http://res.cloudinary.com/funwebdev/image/upload/h_400/art/paintings/${props.painting.imageFileName}.jpg`}
           src={"/artists/full/" + props.artist.artistId + ".jpg"}
           alt={props.artist.artistId}
           className="rounded-md"
