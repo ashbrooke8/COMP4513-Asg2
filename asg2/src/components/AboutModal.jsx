@@ -59,6 +59,7 @@ const AboutModal = (props) => {
               Modal component:{" "}
               <a
                 href="https://daisyui.com/components/modal/"
+                target="_blank"
                 className="underline text-blue-600"
               >
                 DaisyUI
@@ -68,6 +69,7 @@ const AboutModal = (props) => {
               Map component:{" "}
               <a
                 href="//https://react-leaflet.js.org/docs/start-introduction/"
+                target="_blank"
                 className="underline text-blue-600"
               >
                 React Leaflet
@@ -80,6 +82,7 @@ const AboutModal = (props) => {
               Login background image:{" "}
               <a
                 href="https://unsplash.com/photos/a-large-body-of-water-surrounded-by-trees-Ph0ReOHMBpY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                target="_blank"
                 className="underline text-blue-600"
               >
                 Photo on Unsplash by Heather Wilde
@@ -87,19 +90,19 @@ const AboutModal = (props) => {
             </li>
             <li className="text-gray-700">
               JavaScript Array Methods:{" "}
-              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" className="underline text-blue-600">MDN Web Docs</a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" className="underline text-blue-600">MDN Web Docs</a>
             </li>
             <li className="text-gray-700">
               Array.isArray:{" "}
-              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" className="underline text-blue-600">MDN Web Docs</a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" target="_blank" className="underline text-blue-600">MDN Web Docs</a>
             </li>
             <li className="text-gray-700">
               Ternary operators:{" "}
-              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator" className="underline text-blue-600">MDN Web Docs</a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator" target="_blank" className="underline text-blue-600">MDN Web Docs</a>
             </li>
             <li className="text-gray-700">
               Optional chaining operator:{" "}
-              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining" className="underline text-blue-600">MDN Web Docs</a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining" target="_blank" className="underline text-blue-600">MDN Web Docs</a>
             </li>
           </ul>
         </div>
