@@ -10,6 +10,20 @@ const PaintingsPageList = (props) => {
     setSelectedPainting(painting);
   };
 
+  if (filteredPaintings.length === 0 && props.filterSelected) {
+    console.log("here");
+    return (
+      <div
+        className={`bg-white p-5 rounded-lg shadow-lg col-span-${props.span}`}
+      >
+        <h2 className="text-lg font-semibold text-indigo-600">Paintings</h2>
+        <p className="text-gray-700">
+          No paintings match your filter criteria.
+        </p>
+      </div>
+    );
+  }
+
   //sorting logic
   filteredPaintings.sort((a, b) => {
     if (sortType === "artist") {
@@ -51,7 +65,6 @@ const PaintingsPageList = (props) => {
             className="flex items-center space-x-8 border-b pb-3"
           >
             <img
-              // src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
               src={"/paintings/full/" + painting.imageFileName + ".jpg"}
               alt={painting.title}
               className="w-32 h-32 rounded-md"
@@ -66,7 +79,7 @@ const PaintingsPageList = (props) => {
               <p className="text-gray-600">{painting.yearOfWork}</p>
               <p className="text-gray-600">{painting.medium}</p>
               <p className="text-gray-600">
-                {painting.width} by {painting.height}
+                {painting.width}cm x {painting.height}cm
               </p>
               <button
                 className="px-3 py-1 bg-indigo-400 text-white rounded-md hover:bg-indigo-600 transition"
@@ -75,7 +88,6 @@ const PaintingsPageList = (props) => {
                 View Details
               </button>
             </div>
-            {/* <PaintingDetails painting={painting}/> */}
           </div>
         ))}
       </div>

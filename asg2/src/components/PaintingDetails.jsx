@@ -24,7 +24,6 @@ const PaintingDetails = (props) => {
   const handleFavouritesClick = () => {
     if (isFavouritePainting) {
       props.removePainting(props.painting);
-      // console.log("check")
     } else {
       props.addPainting(props.painting);
     }
@@ -37,7 +36,6 @@ const PaintingDetails = (props) => {
         <div className="flex gap-8">
           <div className="flex-shrink-0 w-[350px]">
             <img
-              // src={`http://res.cloudinary.com/funwebdev/image/upload/h_400/art/paintings/${props.painting.imageFileName}.jpg`}
               src={"/paintings/full/" + props.painting.imageFileName + ".jpg"}
               alt={props.painting.title}
               className="rounded-md"
@@ -71,7 +69,7 @@ const PaintingDetails = (props) => {
             <div>
               <h3 className="font-bold text-lg mb-2">Dominant Colors</h3>
               <div className="flex gap-2">
-                {props.painting.jsonAnnotations?.dominantColors?.map(
+                {props.painting.jsonAnnotations.dominantColors.map(
                   (color, index) => (
                     <div
                       key={index}
@@ -109,14 +107,9 @@ const PaintingDetails = (props) => {
           className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
           onClick={handleFavouritesClick}
         >
-          {/* Add to Favorites */}
           {isFavouritePainting ? "Remove from Favorites" : "Add to Favorites"}
         </button>
-        <div className="modal-action">
-          {/* <form method="dialog">
-            <button className="btn">Close</button>
-          </form> */}
-        </div>
+        <div className="modal-action"></div>
       </div>
     </dialog>
   );

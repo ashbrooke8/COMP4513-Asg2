@@ -12,7 +12,6 @@ const PaintingFilters = (props) => {
   const [yearGreater, setYearGreater] = useState("");
 
   const handleFilter = () => {
-    // alert("filter");
     props.onFilter({
       selectedFilter,
       title,
@@ -24,13 +23,13 @@ const PaintingFilters = (props) => {
   };
 
   const handleClear = () => {
-    // alert("clear");
     setSelectedFilter("");
     setTitle("");
     setArtist("");
     setGallery("");
     setYearLess("");
     setYearGreater("");
+    props.onClear?.(); // the ?. calls the function only if it exists
   };
   return (
     <div className="bg-white p-5 rounded-lg col-span-1 shadow-lg">

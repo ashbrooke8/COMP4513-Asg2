@@ -4,21 +4,26 @@ import PaintingFilters from "../components/PaintingFilters";
 import PaintingsPageList from "../components/PaintingsPageList";
 
 const PaintingsPage = (props) => {
+  const [allPaintings, setAllPaintings] = useState([]);
+
   //initializes state with paintings from props, or makes it empty
   const [filteredPaintings, setFilteredPaintings] = useState(
     props.paintings || []
   );
+  const [filterSelected, setFilterSelected] = useState(false);
 
   //updates filteredPaintings whenever the paintings change
   useEffect(() => {
+    setAllPaintings(props.paintings || []);
     setFilteredPaintings(props.paintings || []);
+    setFilterSelected(false);
   }, [props.paintings]);
 
   const handleFilter = (filter) => {
     const { selectedFilter, title, artist, gallery, yearLess, yearGreater } =
       filter;
 
-    let result = [...props.paintings];
+    let result = [...allPaintings];
 
     //conditions to see what the selected filter is, then trimming down the paintings to match the condition
     if (selectedFilter === "title" && title.trim()) {
@@ -60,12 +65,13 @@ const PaintingsPage = (props) => {
         return;
       }
     }
-
+    setFilterSelected(true);
     setFilteredPaintings(result);
   };
 
   const handleClear = () => {
-    setFilteredPaintings(props.paintings || []);
+    setFilterSelected(false);
+    setFilteredPaintings(allPaintings);
   };
 
   return (
@@ -92,6 +98,7 @@ const PaintingsPage = (props) => {
           addPainting={props.addPainting}
           removePainting={props.removePainting}
           favPaintings={props.favPaintings}
+          filterSelected={filterSelected}
         />
       </div>
     </div>
