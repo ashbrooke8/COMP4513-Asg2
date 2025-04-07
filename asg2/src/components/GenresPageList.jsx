@@ -29,7 +29,7 @@ const GenresPageList = (props) => {
         className={`bg-white p-5 rounded-lg shadow-lg col-span-${props.span}`}
       >
         <h2 className="text-lg font-semibold text-indigo-600">Paintings</h2>
-        <p className="text-gray-600">Please wait...</p>
+        <p className="text-gray-600">This may take a few moments. Please wait...</p>
       </div>
     );
   }

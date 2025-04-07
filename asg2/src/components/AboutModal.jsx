@@ -53,12 +53,12 @@ const AboutModal = (props) => {
           </p>
           <ul>
             <li className="text-gray-700">
+              Modal component:{" "}
               <a
                 href="https://daisyui.com/components/modal/"
                 className="underline text-blue-600"
               >
-                I used this modal component from DaisyUI as a starting point for
-                my 'favourites' ,'about', and 'view details' modals.
+                DaisyUI
               </a>
             </li>
             <li className="text-gray-700">

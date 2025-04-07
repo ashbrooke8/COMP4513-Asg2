@@ -11,8 +11,8 @@ const GenreInfo = (props) => {
     <div className="bg-white p-5 rounded-lg shadow-lg">
       <h2 className="text-lg font-semibold text-indigo-600">Genre Info</h2>
       <div className="mt-2 space-y-2">
-        <p className="text-gray-700">
-          <strong>Name:</strong> {props.genre.genreName}
+        <p className="text-gray-700 font-bold text-xl">
+          {props.genre.genreName}
         </p>
         <p className="text-gray-700">
           <strong>Description:</strong> {props.genre.description}
