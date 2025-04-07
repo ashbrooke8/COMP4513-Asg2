@@ -126,7 +126,7 @@ const PaintingFilters = (props) => {
             />
             <span className="text-gray-700">Year</span>
           </label>
-          <div className="flex flex-col space-y-1">
+          <div className="flex flex-col space-y-1 ml-auto">
             <div className="flex items-center space-x-2">
               <span className="text-gray-700">Less&nbsp;&nbsp;&nbsp;</span>
               <input
