@@ -1,5 +1,7 @@
 # COMP 4513 Assignment 2: React
 
+Hosted link: https://comp-4513-asg2.vercel.app/
+
 ## Overview
 
 This assignment is a React, single-page application that consists of different views to display fetched art data for different dashboard catagories:
@@ -20,6 +22,16 @@ This assignment is a React, single-page application that consists of different v
 
 - React (frontend)
 - Tailwind CSS (styling)
-- (to be inserted) (hosting)
+- Vercel (hosting)
 
-Hosted link: https://comp-4513-asg2.vercel.app/
+## External Components Used
+
+Modal component: <a href="https://daisyui.com/components/modal/">
+                DaisyUI
+              </a>
+
+Map component: <a
+                href="//https://react-leaflet.js.org/docs/start-introduction/"
+              >
+                React Leaflet
+              </a>
