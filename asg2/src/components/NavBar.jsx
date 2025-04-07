@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import FavouritesModal from "./FavouritesModal";
+import AboutModal from "./AboutModal";
 
 const NavBar = (props) => {
   const openFavouritesModal = () => {
     const modal = document.getElementById("favourites_modal");
+    if (modal) modal.showModal();
+  };
+
+  const openAboutModal = () => {
+    const modal = document.getElementById("about_modal");
     if (modal) modal.showModal();
   };
 
@@ -59,9 +65,12 @@ const NavBar = (props) => {
         >
           Favourites
         </button>
-        <Link className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600">
+        <button
+          className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+          onClick={openAboutModal}
+        >
           About
-        </Link>
+        </button>
         <Link
           className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
           to="/login"
@@ -78,6 +87,7 @@ const NavBar = (props) => {
         removePainting={props.removePainting}
         removeAllFavourites={props.removeAllFavourites}
       />
+      <AboutModal />
     </header>
   );
 };

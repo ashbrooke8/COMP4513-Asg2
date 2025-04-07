@@ -23,6 +23,17 @@ const GenresPageList = (props) => {
     );
   }
 
+  if (props.genre && (!props.paintings || props.paintings.length === 0)) {
+    return (
+      <div
+        className={`bg-white p-5 rounded-lg shadow-lg col-span-${props.span}`}
+      >
+        <h2 className="text-lg font-semibold text-indigo-600">Paintings</h2>
+        <p className="text-gray-600">Please wait...</p>
+      </div>
+    );
+  }
+
   filteredPaintings.sort((a, b) => {
     if (sortType === "artist") {
       return a.artist.lastName.localeCompare(b.artist.lastName);
