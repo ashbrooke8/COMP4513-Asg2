@@ -31,6 +31,7 @@ const PaintingFilters = (props) => {
     setYearGreater("");
     props.onClear?.(); // the ?. calls the function only if it exists
   };
+
   return (
     <div className="bg-white p-5 rounded-lg col-span-1 shadow-lg">
       <h2 className="text-lg text-indigo-600 mb-4 font-semibold">

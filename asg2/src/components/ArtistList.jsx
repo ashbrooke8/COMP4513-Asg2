@@ -1,8 +1,6 @@
 const ArtistList = (props) => {
   const artists = Array.isArray(props.artists) ? props.artists : [];
 
-  artists.sort((a, b) => a.lastName.localeCompare(b.lastName));
-
   if (artists.length === 0) {
     return (
       <div className="bg-white p-5 rounded-lg shadow-lg col-span-1">
