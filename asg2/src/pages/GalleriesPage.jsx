@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import GalleryList from "../components/GalleryList";

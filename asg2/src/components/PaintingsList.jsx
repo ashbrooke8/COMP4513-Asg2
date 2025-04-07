@@ -1,30 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PaintingDetails from "./PaintingDetails";
 
 const PaintingsList = (props) => {
   const [sortType, setSortType] = useState("title");
   const [selectedPainting, setSelectedPainting] = useState(null);
   let filteredPaintings = [...props.paintings];
-
-  //watches the selected painting for a change and when it happens, rerender
-  // useEffect(() => {
-  //   const modal = document.getElementById("details_modal");
-  //   if (modal) {
-  //     modal.showModal();
-  //     const handleClose = () => props.onClose();
-  //     modal.addEventListener("close", handleClose);
-  //   }
-  //   return () => {
-  //     modal.removeEventListener("close", handleClose)
-  //     };
-  //   }, []);
-
-  // useEffect(() => {
-  //   if (selectedPainting) {
-  //     const modal = document.getElementById("details_modal");
-  //     if (modal) modal.showModal();
-  //   }
-  // }, [selectedPainting]);
 
   const openPaintingDetails = (painting) => {
     setSelectedPainting(painting);
@@ -102,17 +82,6 @@ const PaintingsList = (props) => {
     <div className={`bg-white p-5 rounded-lg shadow-lg col-span-${props.span}`}>
       <div className="flex justify-between mb-3 items-center">
         <h2 className="text-lg font-semibold text-indigo-600">Paintings</h2>
-        {/* <select
-          name="sort"
-          id="sort"
-          value={sortType}
-          onChange={(e) => setSortType(e.target.value)}
-          className="border border-gray-300 rounded p-2"
-        >
-          <option value="artist">Sort by Artist</option>
-          <option value="title">Sort by Title</option>
-          <option value="year">Sort By Year</option>
-        </select> */}
         {filterValues}
       </div>
       <div className="mt-4 space-y-4">
@@ -122,7 +91,6 @@ const PaintingsList = (props) => {
             className="flex items-center space-x-8 border-b pb-3"
           >
             <img
-              // src={`http://res.cloudinary.com/funwebdev/image/upload/w_250/art/paintings/${painting.imageFileName}.jpg`}
               src={"/paintings/square/" + painting.imageFileName + ".jpg"}
               alt={painting.title}
               className="w-32 h-32 rounded-md"
@@ -142,7 +110,6 @@ const PaintingsList = (props) => {
                 View Details
               </button>
             </div>
-            {/* <PaintingDetails painting={painting}/> */}
           </div>
         ))}
       </div>

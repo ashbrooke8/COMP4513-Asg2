@@ -1,5 +1,3 @@
-// const genres = ["Genre One", "Genre Two", "Genre Three", "Genre Four"];
-
 const GenreList = (props) => {
   const genres = Array.isArray(props.genres) ? props.genres : [];
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PaintingDetails from "./PaintingDetails";
 
 const GenresPageList = (props) => {

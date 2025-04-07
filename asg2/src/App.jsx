@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/LoginPage";
@@ -8,8 +6,6 @@ import ArtistsPage from "./pages/ArtistsPage";
 import GalleriesPage from "./pages/GalleriesPage";
 import PaintingsPage from "./pages/PaintingsPage";
 import GenresPage from "./pages/GenresPage";
-// import FavouritesPage from "./pages/FavouritesPage";
-// import AboutPage from "./pages/AboutPage";
 
 function App() {
   // should probably call all of the database stuff here and put it into local storage to be passed down to the other pages? maybe
@@ -92,7 +88,6 @@ function App() {
         JSON.stringify(updatedGalleries)
       );
       setFavGalleries(updatedGalleries);
-      console.log("save galleries");
     }
   };
 
@@ -101,8 +96,6 @@ function App() {
       const updatedArtists = [...favArtists, artist];
       localStorage.setItem("favouriteArtists", JSON.stringify(updatedArtists));
       setFavArtists(updatedArtists);
-      // console.log(favArtists);
-      // console.log("save artist");
     }
   };
 
@@ -114,7 +107,6 @@ function App() {
         JSON.stringify(updatedPaintings)
       );
       setFavPaintings(updatedPaintings);
-      console.log("save painting");
     }
   };
 
@@ -157,7 +149,6 @@ function App() {
     setFavPaintings([]);
     setFavArtists([]);
     setFavGalleries([]);
-    // console.log("check")
   };
 
   return (
@@ -235,8 +226,6 @@ function App() {
           />
         }
       />
-      {/* <Route path="/favourites" element={<FavouritesPage />} /> */}
-      {/* <Route path="/about" element={<AboutPage />} /> */}
     </Routes>
   );
 }

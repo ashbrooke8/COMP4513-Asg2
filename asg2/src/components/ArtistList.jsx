@@ -8,7 +8,6 @@ const ArtistList = (props) => {
       <div className="bg-white p-5 rounded-lg shadow-lg col-span-1">
         <h2 className="text-lg font-semibold text-indigo-600">Artist List</h2>
         <p className="text-gray-600">Loading artists...</p>
-        {/* should make this a cool loading animation */}
       </div>
     );
   }

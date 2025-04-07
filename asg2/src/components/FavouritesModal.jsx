@@ -66,11 +66,9 @@ const FavouritesModal = (props) => {
           <h3 className="font-bold text-xl text-gray-700">Favourites</h3>
           <div className="flex gap-4">
         <button className="bg-indigo-400 rounded ml-4 px-3 py-1 transition hover:bg-indigo-600" onClick={props.removeAllFavourites}>Empty Favourites</button>
-        {/* <div className="modal-action"> */}
           <form method="dialog">
             <button className="px-4 py-2 bg-indigo-400 text-white rounded hover:bg-indigo-600">Close</button>
           </form>
-        {/* </div> */}
         </div>
         </div>
         <div className="grid grid-cols-3 p-6 gap-6">
@@ -87,11 +85,6 @@ const FavouritesModal = (props) => {
             {favPaintingList}
           </div>
         </div>
-        {/* <div className="modal-action">
-          <form method="dialog">
-            <button className="btn">Close</button>
-          </form>
-        </div> */}
       </div>
     </dialog>
   );
