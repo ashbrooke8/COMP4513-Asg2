@@ -2,8 +2,13 @@ const AboutModal = (props) => {
   return (
     <dialog id="about_modal" className="modal">
       <div className="flex flex-col modal-box h-[700px] max-w-[1200px] bg-purple-100 gap-4">
-        <div className="flex gap-6">
+        <div className="flex justify-between gap-6">
           <h3 className="font-bold text-2xl text-gray-700">About</h3>
+          {/* <div className="modal-action"> */}
+            <form method="dialog">
+              <button className="px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400">Close</button>
+            </form>
+          {/* </div> */}
         </div>
         <div className="flex flex-col gap-6 bg-white rounded p-4">
           <p className="text-gray-700 text-lg font-bold">
@@ -95,11 +100,11 @@ const AboutModal = (props) => {
               <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator" className="underline text-blue-600">MDN Web Docs</a>
             </li>
           </ul>
-          <div className="modal-action">
+          {/* <div className="modal-action">
             <form method="dialog">
               <button className="btn">Close</button>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </dialog>

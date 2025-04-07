@@ -42,13 +42,18 @@ const PaintingDetails = (props) => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex justify-between">
+          <div className="flex items-center justify-between">
               <p className="text-gray-700 text-xl font-bold">
                 {props.painting.title} ({props.painting.yearOfWork})
               </p>
+              <div className="flex gap-4">
+              <button className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400" onClick={handleFavouritesClick}>
+                {isFavouritePainting ? "★ Remove from Favorites" : "☆ Add to Favorites"}
+              </button>
               <form method="dialog">
-                <button className="btn">Close</button>
+                <button className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400">Close</button>
               </form>
+              </div>
             </div>
             <p className="text-gray-700 font-bold">
               {props.painting.artist.firstName} {props.painting.artist.lastName}
@@ -103,12 +108,12 @@ const PaintingDetails = (props) => {
             </div>
           </div>
         </div>
-        <button
+        {/* <button
           className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
           onClick={handleFavouritesClick}
         >
           {isFavouritePainting ? "Remove from Favorites" : "Add to Favorites"}
-        </button>
+        </button> */}
         <div className="modal-action"></div>
       </div>
     </dialog>

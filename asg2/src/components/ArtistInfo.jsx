@@ -55,8 +55,7 @@ const ArtistInfo = (props) => {
           className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
           onClick={handleFavouritesClick}
         >
-          {isFavouriteArtist ? "Remove from Favorites" : "Add to Favorites"}
-        </button>
+        {isFavouriteArtist ? "★ Remove from Favorites" : "☆ Add to Favorites"}</button>
         <img
           src={"/artists/full/" + props.artist.artistId + ".jpg"}
           alt={props.artist.artistId}
