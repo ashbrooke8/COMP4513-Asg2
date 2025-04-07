@@ -49,7 +49,6 @@ const GalleryInfo = (props) => {
         className="mt-4 px-4 py-2 bg-indigo-400 text-white rounded hover:bg-indigo-600 mb-4"
         onClick={handleFavouritesClick}
       >
-        {/* Add to Favorites */}
         {isFavouriteGallery ? "Remove from Favorites" : "Add to Favorites"}
       </button>
       <Map

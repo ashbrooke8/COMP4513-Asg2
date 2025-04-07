@@ -74,13 +74,25 @@ const AboutModal = (props) => {
           <p className="text-gray-700 font-bold text-xl">Sources/References</p>
           <ul>
             <li className="text-gray-700">
-              Login background image:
+              Login background image:{" "}
               <a
                 href="https://unsplash.com/photos/a-large-body-of-water-surrounded-by-trees-Ph0ReOHMBpY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
                 className="underline text-blue-600"
               >
                 Photo on Unsplash by Heather Wilde
               </a>
+            </li>
+            <li className="text-gray-700">
+              JavaScript Array Methods:{" "}
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" className="underline text-blue-600">MDN Web Docs</a>
+            </li>
+            <li className="text-gray-700">
+              Array.isArray:{" "}
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" className="underline text-blue-600">MDN Web Docs</a>
+            </li>
+            <li className="text-gray-700">
+              Ternary operators:{" "}
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator" className="underline text-blue-600">MDN Web Docs</a>
             </li>
           </ul>
           <div className="modal-action">

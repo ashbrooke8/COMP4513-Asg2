@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
 
-const handleLogin = () => {
-  alert("hii");
-};
-
 const LoginForm = () => {
   return (
     <div className="bg-gray-100 p-6 rounded-md shadow-lg w-80">
