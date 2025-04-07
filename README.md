@@ -22,4 +22,4 @@ This assignment is a React, single-page application that consists of different v
 - Tailwind CSS (styling)
 - (to be inserted) (hosting)
 
-Hosted link:
+Hosted link: https://comp-4513-asg2.vercel.app/
