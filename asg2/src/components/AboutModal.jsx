@@ -110,7 +110,7 @@ const AboutModal = (props) => {
             </li>
             <li className="text-gray-700">
               Vercel Rewrites:{" "}
-              <a href="https://vercel.com/docs/rewrites">Vercel Docs</a>
+              <a href="https://vercel.com/docs/rewrites" target="_blank" className="underline text-blue-600">Vercel Docs</a>
             </li>
           </ul>
         </div>
