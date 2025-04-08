@@ -21,8 +21,8 @@ const GenreInfo = (props) => {
         </p>
         <p className="text-gray-700">
           <strong>URL:</strong>
-          <a href="#" className="text-indigo-500 hover:underline">
-          {props.genre.wikiLink}
+          <a href={props.genre.wikiLink} className="text-indigo-500 hover:underline">
+            Wikipedia
           </a>
         </p>
         </div>
