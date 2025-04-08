@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import FavouritesModal from "./FavouritesModal";
 import AboutModal from "./AboutModal";
 
 const NavBar = (props) => {
+  const location = useLocation();
+  console.log(location)
+  const isAtLink = (path) => location.pathname === path;
+
   const openFavouritesModal = () => {
     const modal = document.getElementById("favourites_modal");
     if (modal) modal.showModal();
@@ -35,25 +39,25 @@ const NavBar = (props) => {
       <div className="text-xl font-bold border-2 p-2 rounded">Art Explorer</div>
       <nav className="space-x-4">
         <Link
-          className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+          className={`px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600 ${isAtLink("/artists") ? "pointer-events-none opacity-50" : ""}`}
           to="/artists"
         >
           Artists
         </Link>
         <Link
-          className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+          className={`px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600 ${isAtLink("/paintings") ? "pointer-events-none opacity-50" : ""}`}
           to="/paintings"
         >
           Paintings
         </Link>
         <Link
-          className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+          className={`px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600 ${isAtLink("/galleries") ? "pointer-events-none opacity-50" : ""}`}
           to="/galleries"
         >
           Galleries
         </Link>
         <Link
-          className="px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+          className={`px-3 py-1 bg-indigo-400 text-white rounded hover:bg-indigo-600 ${isAtLink("/genres") ? "pointer-events-none opacity-50" : ""}`}
           to="/genres"
         >
           Genres

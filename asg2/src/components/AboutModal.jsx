@@ -104,6 +104,10 @@ const AboutModal = (props) => {
               Optional chaining operator:{" "}
               <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining" target="_blank" className="underline text-blue-600">MDN Web Docs</a>
             </li>
+            <li className="text-gray-700">
+              useLocation:{" "}
+              <a href="https://api.reactrouter.com/v7/functions/react_router.useLocation.html" target="_blank" className="underline text-blue-600">React Router API Reference</a>
+            </li>
           </ul>
         </div>
       </div>
