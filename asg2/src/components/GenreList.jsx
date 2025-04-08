@@ -2,10 +2,15 @@ const GenreList = (props) => {
   const genres = Array.isArray(props.genres) ? props.genres : [];
 
   if (genres.length === 0) {
+    return (
     <div className="bg-white p-5 rounded-lg shadow-lg col-span-1">
       <h2 className="text-lg font-semibold text-indigo-600">Genres List</h2>
-      <p className="text-gray-600">Loading genres...</p>
-    </div>;
+      {/* <p className="text-gray-600">Loading genres...</p> */}
+      <div className="flex justify-center">
+        <img src="/loading.gif" alt="Loading..." className="w-16"/>
+        </div>
+    </div>
+    );
   }
 
   return (

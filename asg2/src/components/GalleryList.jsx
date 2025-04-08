@@ -2,10 +2,15 @@ const GalleryList = (props) => {
   const galleries = Array.isArray(props.galleries) ? props.galleries : [];
 
   if (galleries.length === 0) {
+    return (
     <div className="bg-white p-5 rounded-lg shadow-lg col-span-1">
         <h2 className="text-lg font-semibold text-indigo-600">Gallery List</h2>
-        <p className="text-gray-600">Loading galleries...</p>
+        {/* <p className="text-gray-600">Loading galleries...</p> */}
+        <div className="flex justify-center">
+        <img src="/loading.gif" alt="Loading..." className="w-16"/>
+        </div>
     </div>
+    );
   }
   return (
     <div className="bg-white p-5 rounded-lg shadow-lg col-span-1">

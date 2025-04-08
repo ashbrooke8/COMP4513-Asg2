@@ -1,11 +1,14 @@
 const ArtistList = (props) => {
   const artists = Array.isArray(props.artists) ? props.artists : [];
 
-  if (artists.length === 0) {
+  if (artists.length === 0 || !artists) {
     return (
       <div className="bg-white p-5 rounded-lg shadow-lg col-span-1">
         <h2 className="text-lg font-semibold text-indigo-600">Artist List</h2>
-        <p className="text-gray-600">Loading artists...</p>
+        {/* <p className="text-gray-600">Loading artists...</p> */}
+        <div className="flex justify-center">
+        <img src="/loading.gif" alt="Loading..." className="w-16"/>
+        </div>
       </div>
     );
   }
