@@ -154,6 +154,7 @@ function App() {
   //sort artists and galleries before sending them to anything
   artists.sort((a, b) => a.lastName.localeCompare(b.lastName));
   galleries.sort((a,b) => a.galleryName.localeCompare(b.galleryName))
+  genres.sort((a,b) => a.genreName.localeCompare(b.genreName))
 
   return (
     <Routes>

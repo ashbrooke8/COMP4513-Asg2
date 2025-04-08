@@ -3,6 +3,7 @@ import FavouritesModal from "./FavouritesModal";
 import AboutModal from "./AboutModal";
 
 const NavBar = (props) => {
+  //logic to later disable active link
   const location = useLocation();
   console.log(location)
   const isAtLink = (path) => location.pathname === path;
