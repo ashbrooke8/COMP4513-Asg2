@@ -11,11 +11,13 @@ const GenreInfo = (props) => {
     <div className="bg-white p-5 rounded-lg shadow-lg">
       <h2 className="text-lg font-semibold text-indigo-600">Genre Info</h2>
       <div className="mt-2 space-y-2">
-        <p className="text-gray-700 font-bold text-xl">
+        <div className="flex gap-6">
+        <div className="flex flex-col gap-4">
+        <p className="text-gray-700 font-bold text-lg">
           {props.genre.genreName}
         </p>
         <p className="text-gray-700">
-          <strong>Description:</strong> {props.genre.description}
+          {props.genre.description}
         </p>
         <p className="text-gray-700">
           <strong>URL:</strong>
@@ -23,6 +25,15 @@ const GenreInfo = (props) => {
           {props.genre.wikiLink}
           </a>
         </p>
+        </div>
+        <div>
+        <img
+          src={"/genres/" + props.genre.genreId + ".jpg"}
+          alt={props.genre.genreId}
+          className="rounded-md w-400"
+        />
+        </div>
+        </div>
       </div>
     </div>
   );
