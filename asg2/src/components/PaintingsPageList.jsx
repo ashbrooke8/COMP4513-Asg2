@@ -49,7 +49,7 @@ const PaintingsPageList = (props) => {
       return a.yearOfWork - b.yearOfWork;
     }
     if (sortType === "gallery") {
-      return a.galleryName - b.galleryName;
+      return a.gallery.galleryName.localeCompare(b.gallery.galleryName)
     }
     return 0;
   });
