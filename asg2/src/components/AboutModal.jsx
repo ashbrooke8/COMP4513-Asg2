@@ -68,7 +68,7 @@ const AboutModal = (props) => {
             <li className="text-gray-700">
               Map component:{" "}
               <a
-                href="//https://react-leaflet.js.org/docs/start-introduction/"
+                href="https://react-leaflet.js.org"
                 target="_blank"
                 className="underline text-blue-600"
               >
