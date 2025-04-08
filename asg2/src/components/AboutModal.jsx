@@ -108,6 +108,10 @@ const AboutModal = (props) => {
               useLocation:{" "}
               <a href="https://api.reactrouter.com/v7/functions/react_router.useLocation.html" target="_blank" className="underline text-blue-600">React Router API Reference</a>
             </li>
+            <li className="text-gray-700">
+              Vercel Rewrites:{" "}
+              <a href="https://vercel.com/docs/rewrites">Vercel Docs</a>
+            </li>
           </ul>
         </div>
       </div>
