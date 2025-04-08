@@ -6,6 +6,8 @@ Hosted link: https://comp-4513-asg2.vercel.app/
 
 This assignment is a React, single-page application that consists of different views to display fetched art data for different dashboard catagories:
 
+- Login: users are able to click "Login" to enter and start exploring Art Explorer.
+
 - Artists: displays a list of artists that when selected, display more information and all of their paintings.
 
 - Paintings: allows the user to either view all of the paintings, or filter them based on criteria.
@@ -35,3 +37,13 @@ Map component: <a
               >
                 React Leaflet
               </a>
+
+## Image References
+- Login background: <a
+                href="https://unsplash.com/photos/a-large-body-of-water-surrounded-by-trees-Ph0ReOHMBpY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                target="_blank"
+                className="underline text-blue-600"
+              >
+                Photo on Unsplash by Heather Wilde
+              </a>
+- Painting, artist, and genre images: provided by COMP 4513 professor to be used for educational purposes.
