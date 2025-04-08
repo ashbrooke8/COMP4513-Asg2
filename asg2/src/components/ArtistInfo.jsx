@@ -24,7 +24,15 @@ const ArtistInfo = (props) => {
 
   return (
     <div className="bg-white p-5 rounded-lg shadow-lg col-span-2">
+      <div className="flex justify-between">
       <h2 className="text-lg font-semibold text-indigo-600">Artist Info</h2>
+      <button
+        className=" px-2 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+        onClick={handleFavouritesClick}
+      >
+        {isFavouriteArtist ? "★ Remove from Favorites" : "☆ Add to Favorites"}
+      </button>
+      </div>
       <div className="mt-2 space-y-2">
         <p className="text-gray-700 font-extrabold text-lg">
           {props.artist.firstName} {props.artist.lastName}
@@ -51,11 +59,11 @@ const ArtistInfo = (props) => {
             Wikipedia
           </a>
         </p>
-        <button
+        {/* <button
           className="mt-4 px-4 py-2 text-white rounded hover:bg-indigo-600 bg-indigo-400"
           onClick={handleFavouritesClick}
         >
-        {isFavouriteArtist ? "★ Remove from Favorites" : "☆ Add to Favorites"}</button>
+        {isFavouriteArtist ? "★ Remove from Favorites" : "☆ Add to Favorites"}</button> */}
         <img
           src={"/artists/full/" + props.artist.artistId + ".jpg"}
           alt={props.artist.artistId}

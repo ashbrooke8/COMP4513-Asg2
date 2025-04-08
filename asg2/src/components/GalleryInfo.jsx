@@ -28,7 +28,15 @@ const GalleryInfo = (props) => {
 
   return (
     <div className="bg-white p-5 rounded-lg shadow-lg col-span-2">
+      <div className="flex justify-between">
       <h2 className="text-lg font-semibold text-indigo-600">Gallery Info</h2>
+      <button
+        className=" px-2 bg-indigo-400 text-white rounded hover:bg-indigo-600"
+        onClick={handleFavouritesClick}
+      >
+        {isFavouriteGallery ? "★ Remove from Favorites" : "☆ Add to Favorites"}
+      </button>
+      </div>
       <div className="mt-2 space-y-2">
         <p className="text-gray-700 text-lg">
           <strong>{props.gallery.galleryName}</strong> (
@@ -45,12 +53,12 @@ const GalleryInfo = (props) => {
           </a>
         </p>
       </div>
-      <button
+      {/* <button
         className="mt-4 px-4 py-2 bg-indigo-400 text-white rounded hover:bg-indigo-600 mb-4"
         onClick={handleFavouritesClick}
       >
         {isFavouriteGallery ? "★ Remove from Favorites" : "☆ Add to Favorites"}
-      </button>
+      </button> */}
       <Map
         latitude={props.gallery.latitude}
         longitude={props.gallery.longitude}
