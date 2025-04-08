@@ -12,7 +12,6 @@ const GenresPage = (props) => {
   useEffect(() => {
     if (!selectedGenre) return;
     let url = `https://comp4513-asg1.glitch.me/api/paintings/genre/${selectedGenre.genreId}`;
-    console.log("check");
     fetch(url)
       .then((resp) => resp.json())
       .then((data) => {
@@ -22,8 +21,6 @@ const GenresPage = (props) => {
         console.error("Error detching paintings: ", err);
       });
   }, [selectedGenre]);
-
-  console.log("genrePaintings fetched:", genrePaintings);
 
   return (
     <div className="bg-purple-100 min-h-screen font-mono">

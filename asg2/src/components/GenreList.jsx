@@ -23,7 +23,6 @@ const GenreList = (props) => {
             className="w-full px-4 py-2 bg-indigo-400 text-white rounded-md hover:bg-indigo-700 transition"
             onClick={() => {
               props.onSelectGenre(genre);
-              console.log(genre);
             }}
           >
             {genre.genreName}
