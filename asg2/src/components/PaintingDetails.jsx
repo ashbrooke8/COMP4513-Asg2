@@ -89,6 +89,7 @@ const PaintingDetails = (props) => {
               Copyright: {props.painting.copyrightText}
             </p>
             <div>
+            {props.painting.museumLink ? (
               <a
                 href={props.painting.museumLink}
                 target="_blank"
@@ -97,6 +98,10 @@ const PaintingDetails = (props) => {
               >
                 Museum&nbsp;&nbsp;
               </a>
+            ):(
+              <span className="text-gray-700">No Museum Link</span>
+            )}
+            {props.painting.wikiLink ? (
               <a
                 href={props.painting.wikiLink}
                 target="_blank"
@@ -105,6 +110,9 @@ const PaintingDetails = (props) => {
               >
                 Wikipedia
               </a>
+              ):(
+                <span className="text-gray-700">No Wikipedia Link</span>
+              )}
             </div>
           </div>
         </div>
